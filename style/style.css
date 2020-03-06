@@ -1,0 +1,685 @@
+body {
+	margin:							0;
+}
+
+div#duck-mixer {
+	display:                    block;
+  font-family:                sans-serif;
+	font-size:                  16px;
+  -webkit-font-smoothing:     antialiased;
+	height:                     100%;
+  line-height:                1.26;
+	padding:						        3.6rem 0.9rem;
+  position:                   relative;
+	width:                      calc(100% - 0.9em * 2);
+}
+
+div#duck-mixer.bg--gradient {
+  background-image:           linear-gradient(36deg, rgba(0, 255, 0, 0.36), rgba(243, 255, 9, 0.54)),
+                              linear-gradient(-36deg, rgba(255,255,255,0.36), rgba(255,255,255,0.09)),
+                              url(../images/background--cables.jpg);
+  background-size:            cover;
+}
+
+div#duck-mixer.hide {
+  display:                    none;
+}
+
+div#duck-mixer::before {
+  background-size:            cover;
+  background-image:           linear-gradient(0deg, rgba(255,255,255,0.18), rgba(255,255,255,.18)), linear-gradient(36deg, rgba(0, 255, 0, 0.36), rgba(243, 255, 9, 0.54)), linear-gradient(-36deg, rgba(36,36,36,0.45), rgba(0,0,0,0.18)), url(../images/background--cables.jpg);
+  background-image:           linear-gradient(0deg, rgba(255,255,255,0.09), rgba(255,255,255,0)), linear-gradient(36deg, rgba(255, 255, 255, 0.18), rgba(243, 243, 243, 0.36)), linear-gradient(-36deg, rgba(36,36,36,0.45), rgba(0,0,0,0.18)), url(../images/background--cables.jpg);
+  -webkit-clip-path:          polygon(
+                                        calc(50% - 9rem) calc(4.1rem + 5px),
+                                        calc(50% - 8.7rem) calc(3.74rem + 3px),
+                                        calc(50% - 8.21rem) calc(3.52rem + 2.5px),
+
+                                        calc(50% + 8.21rem) calc(3.52rem + 2px),
+                                        calc(50% + 8.7rem) calc(3.74rem + 2px),
+                                        calc(50% + 9rem) calc(4.1rem + 2px),
+
+                                        calc(50% + 9rem) calc(100% - 4.2rem - 3px),
+                                        calc(50% + 8.7rem) calc(100% - 3.8rem - 2.5px),
+                                        calc(50% + 8.21rem) calc(100% - 3.6rem - 1px),
+
+                                        calc(50% - 8.21rem) calc(100% - 3.6rem - 1px),
+                                        calc(50% - 8.7rem) calc(100% - 3.8rem - 2.5px),
+                                        calc(50% - 9rem) calc(100% - 4.2rem - 3px)
+                              );
+  clip-path:                  polygon(
+                                        calc(50% - 9rem) calc(4.1rem + 5px),
+                                        calc(50% - 8.7rem) calc(3.74rem + 3px),
+                                        calc(50% - 8.21rem) calc(3.52rem + 2.5px),
+
+                                        calc(50% + 8.21rem) calc(3.52rem + 2.5px),
+                                        calc(50% + 8.7rem) calc(3.74rem + 3px),
+                                        calc(50% + 9rem) calc(4.1rem + 5px),
+
+                                        calc(50% + 9rem) calc(100% - 4.2rem - 3px),
+                                        calc(50% + 8.7rem) calc(100% - 3.8rem - 2.5px),
+                                        calc(50% + 8.21rem) calc(100% - 3.6rem - 1px),
+
+                                        calc(50% - 8.21rem) calc(100% - 3.6rem - 1px),
+                                        calc(50% - 8.7rem) calc(100% - 3.8rem - 2.5px),
+                                        calc(50% - 9rem) calc(100% - 4.2rem - 3px)
+                              );
+  content:                    ' ';
+  display:                    block;
+  filter:                     blur(7px) grayscale(100%);
+  height:                     100%;
+  left:                       0;
+  position:                   absolute;
+  top:                        0;
+  width:                      100%;
+  z-index:                    0;
+}
+
+div#duck-mixer button {
+  background-color:           black;
+  border:                     0;
+  border-radius:              0.39rem;
+  box-shadow:                 0 3px 0 0 white;
+  color:                      white;
+  cursor:                     pointer;
+  display:                    block;
+  font-size:                  1rem;
+  font-weight:                600;
+  height:                     2.7rem;
+  line-height:                1;
+  margin:                     0.9rem 0;
+  min-width:                  3rem;
+  padding:                    0.3rem;
+  text-transform:             uppercase;
+  user-select:                none;
+  width:                      100%;
+}
+
+div#duck-mixer button:active {
+  background-color:           rgba(254, 225, 35, 1)              !important;
+  box-shadow:                 none                !important;
+  color:                      black;
+  outline:                    none                !important;
+  top:                        3px;
+}
+
+div#duck-mixer button:focus {
+  outline:                    none;
+  border:                     1px solid rgba(254, 225, 35, 1);
+}
+
+div#duck-mixer button.active {
+  background-color:           rgba(254, 225, 35, 1)              !important;
+  box-shadow:                 none                !important;
+  color:                      black;
+  outline:                    none                !important;
+  top:                        3px;
+}
+
+div#duck-mixer h1, h2, h3, h4, h5, h6 {
+  line-height:                1;
+}
+
+div#duck-mixer h3 {
+  font-size:                0.81rem;
+  letter-spacing:           0.00225rem;
+  text-transform:           uppercase;
+}
+
+div#duck-mixer hr {
+	background:                 transparent;
+  border:							        0;
+  border-top:                 1px dotted black;
+  height:							        0;
+  margin:                     1.8rem 0.9rem;
+  opacity:                    0.36;
+  padding:                    0;
+}
+
+div#duck-mixer input[type=range] {
+  -webkit-appearance:   none; /* Hides the slider so that custom slider can be made */
+  background-color:     transparent;
+  background-image: linear-gradient(90deg, transparent, rgba(0, 121, 53, 1));
+  display:              block;
+  font:                 16px sans-serif;
+  font-size:            16px;
+  height:               7rem;
+  -webkit-transform:    rotate(-90deg);
+  -moz-transform:       rotate(-90deg);
+  -o-transform:         rotate(-90deg);
+  -ms-transform:        rotate(-90deg);
+  transform:            rotate(-90deg);
+  margin-bottom:        11.2rem;
+  margin-left:          -10rem;
+  margin-right:         -13rem;
+  margin-top:           10.3rem;
+  width:                27rem;
+  border-left:          1px solid rgba(  0,   0,   0, 0.3);
+  border-right:         1px solid rgba(254, 225,  35, 0.9);
+  margin-bottom:            10.72rem;
+  margin-top:               9.84rem;
+  width:                    26rem;
+}
+
+div#duck-mixer input[type=range]:focus {
+  outline:              none;
+  border-left-color:    rgba(98, 167, 15, 1);
+}
+
+div#duck-mixer input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+div#duck-mixer input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance:         none;
+  background-color:           rgba(254, 225, 35, 1);
+  cursor:                     pointer;
+  font-size:                  16px;
+  height:                     7rem;
+  width:                      1.8rem;
+}
+
+/* All the same stuff for Firefox */
+div#duck-mixer input[type=range]::-moz-range-thumb {
+  background-color:           rgba(254, 225, 35, 1);
+  border:                     none;
+  cursor:                     pointer;
+  font-size:                  16px;
+  height:                     9rem;
+  outline:                    none;
+  width:                      1.8rem;
+}
+
+
+/* All the same stuff for IE */
+div#duck-mixer input[type=range]::-ms-thumb {
+  background:                 rgba(255,255,255,0.9);
+  cursor:                     pointer;
+  height:                     7rem;
+  width:                      3rem;
+}
+
+div#duck-mixer input[type=range]::-webkit-slider-runnable-track {
+  background-color:           transparent;
+  border:                     none;
+  font-size:                  16px;
+  height:                     100%;
+}
+
+div#duck-mixer input[type=range]:focus::-webkit-slider-runnable-track {
+  background-color:           transparent;
+}
+
+div#duck-mixer input[type=range]::-moz-range-track {
+  background-color:           transparent;
+  height:                     100%;
+}
+
+div#duck-mixer div.duck-mixer--board {
+  border:                     1px solid white;
+  border-radius:              0.9rem;
+  box-shadow:                 0.3rem 0.3rem 3.6rem -0.9rem black;
+  margin:                     auto;
+  max-width:                  18rem;
+  max-width:                  30rem;
+  max-width:                  75rem;
+}
+
+div#duck-mixer div.duck-mixer--board * {
+  position:                   relative;
+  z-index:                    1;
+}
+
+div#duck-mixer div.container--button--play {
+  display:                    inline-block;
+  height:                     100%;
+  padding-left:               0.9rem;
+  width:                      50%;
+}
+
+div#duck-mixer div.container--button--stop--mute-all {
+  width:                      50%;
+}
+
+div#duck-mixer div.container--controls--track {
+  display:                    none;
+}
+
+div#duck-mixer div.container--logo {
+  display:                    flex;
+  height:                     8.1rem;
+  margin-top:                 -1.2rem;
+  width:                      100%;
+}
+
+div#duck-mixer div.container--logo > svg {
+  display:                    flex;
+  flex-direction:             column;
+  margin:                     auto;
+  width:                      9rem;
+}
+
+div#duck-mixer div.controls--track--master {
+  display:                    flex;
+  margin:                     0.9rem;
+}
+
+div#duck-mixer div.controls--track--master h3 {
+  margin:                     0;
+}
+
+div#duck-mixer div.controls--track--mobile-master {
+  margin-left:                0.9rem;
+  overflow:                   hidden;
+  position:                   relative;
+  width:                      4.8rem;
+}
+
+div#duck-mixer div.controls--master-playback {
+	display:                    flex;
+  height:                     6.3rem;
+  margin:                     0.9rem;
+  max-width:                  44.25rem;
+}
+
+div#duck-mixer div.controls--master-playback button {
+  display:                    block;
+  margin:                     0;
+}
+
+div#duck-mixer div.controls--master-playback button.mute-all {
+  margin-top:                 0.9em;
+}
+
+div#duck-mixer div.controls--master-playback button.play {
+  height:                     100%;
+}
+
+/*
+div#duck-mixer div.controls--master-playback button.play.active {
+  content:                    'Pause';
+}
+*/
+
+div#duck-mixer div.controls--master-playback button.stop {
+  margin-bottom:              0.9em;
+}
+
+div#duck-mixer div.credits {
+  background:                 rgba(0,0,0,0.36);
+  color:                      white;
+  padding:                    0.6rem 0.9rem;
+}
+
+div#duck-mixer div.credits > p {
+  display:                    block;
+  max-width:                  22rem;
+  margin:                     auto;
+  overflow:                   hidden;
+  text-overflow:              ellipsis;
+  white-space:                nowrap;
+}
+
+div#duck-mixer div.viz-and-credits.initial rect, div#duck-mixer div.viz-and-credits.loading rect {
+  width:                      100%;
+  x:                          0;
+}
+
+@keyframes pulse {
+  0% { opacity: 0; }
+  33% { opacity: 1; }
+  67% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+div#duck-mixer div.viz-and-credits.loading rect {
+  animation:                  pulse 3s ease infinite;
+  opacity:                    0;
+}
+
+div#duck-mixer div.viz-and-credits.initial svg.visualization text {
+  transform:                  translateX(-7.45rem);
+}
+
+div#duck-mixer div.viz-and-credits.loading svg.visualization text {
+  transform:                  translateX(-2.16rem);
+}
+
+div#duck-mixer div.viz-and-credits.playing svg.visualization text {
+  transform:                  translateX(-2.04rem);
+}
+
+div#duck-mixer div.viz-and-credits.paused svg.visualization text {
+  transform:                  translateX(-1.92rem);
+}
+
+div#duck-mixer div.viz-and-credits.stopped svg.visualization text {
+  transform:                  translateX(-2.22rem);
+}
+
+div#duck-mixer svg.visualization {
+  background-color:           rgba(0,0,0, 0.36);
+  border-radius:              0.84rem 0.84rem 0 0;
+  display:						        block;
+  height:                     3rem;
+  width:							        100%;
+}
+
+div#duck-mixer svg.visualization text {
+  font-size:                  0.9rem;
+  font-weight:                700;
+  letter-spacing:             0.03rem;
+  text-transform:             uppercase;
+}
+
+div#duck-mixer ul.choose--track {
+  display:                    block;
+  list-style:                 none;
+  margin:                     0;
+  padding:                    0;
+  width:                      100%;
+}
+
+div#duck-mixer ul.choose--track li {
+  display:                    block;
+  padding:                    0.3rem 0;
+}
+
+div#duck-mixer ul.choose--track li > label {
+  background-color:           rgba(0,0,0,0.63);
+  border-radius:              0.36rem;
+  box-shadow:                 0 3px 1px -1px rgba(255,255,255,0.72);
+  border:                     1px solid black;
+  color:                      white;
+  display:                    block;
+  font-weight:                900;
+  letter-spacing:             0.03rem;
+  overflow:                   hidden;
+  padding:                    0.9rem 0.63rem;
+  padding-right:              2.7rem;
+  user-select:                none;
+}
+
+div#duck-mixer ul.choose--track li > label:active {
+  box-shadow:                 0 1px 1px -1px rgba(255,255,255,0.72);
+  position:                   relative;
+  top:                        2px;
+}
+
+div#duck-mixer ul.choose--track li > label::before {
+  border:                     black solid 1px;
+  border-radius:              0.18rem;
+  content:                    'V';
+  display:                    inline-block;
+  font-size:                  0.9rem;
+  /* font-size:                  0.6rem; */
+  font-weight:                900;
+  height:                     1rem;
+  padding:                    0.3rem;
+  position:                   absolute;
+  right:                      0.6rem;
+  top:                        50%;
+  text-align:                 center;
+  text-transform:             uppercase;
+  transform:                  translateY(-50%);
+  width:                      1rem;
+}
+
+div#duck-mixer ul.choose--track li > label input[type=checkbox] {
+  background-color:           transparent;
+  border:                     1px solid white;
+  border-radius:              0.18rem;
+  cursor:                     pointer;
+  display:                    inline-block;
+  height:                     0.9rem;
+  margin:                     0 0.9rem 0 0.45em;
+  margin-top:                 -0.18rem;
+  -moz-appearance:            none;
+  outline:                    none;
+  vertical-align:             middle;
+  -webkit-appearance:         none;
+  width:                      0.9rem;
+}
+
+div#duck-mixer ul.choose--track li > label input[type=checkbox]:checked {
+  background-color:           rgba(254, 225, 35, 1);
+}
+
+div#duck-mixer ul.choose--track li > label input[type=checkbox]:focus {
+  border:                     3px solid rgba(254, 225, 35, 1);
+}
+
+div#duck-mixer ul.choose--track li > label input[type=checkbox]:checked:focus {
+  border:                     3px solid goldenrod;
+}
+
+div#duck-mixer ul.choose--track li > label p {
+  display:                    inline-block;
+  margin:                     0;
+  max-width:                  6rem;
+  overflow-wrap:              break-word;
+  vertical-align:             middle;
+}
+
+div#duck-mixer-alt {
+  display:                    block;
+  font-family:                sans-serif;
+  font-size:                  16px;
+  -webkit-font-smoothing:     antialiased;
+  height:                     100%;
+  line-height:                1.26;
+  padding:                    3.6rem 0.9rem;
+  position:                   relative;
+  width:                      calc(100% - 0.9em * 2);
+}
+
+div#duck-mixer-alt.bg--gradient {
+  background-image:           linear-gradient(36deg, rgba(0, 255, 0, 0.36), rgba(243, 255, 9, 0.54)),
+                              linear-gradient(-36deg, rgba(255,255,255,0.36), rgba(255,255,255,0.09)),
+                              url(../images/background--cables.jpg);
+  background-size:            cover;
+}
+
+div#duck-mixer-alt.hide {
+  display:                    none;
+}
+
+div#duck-mixer-alt audio {
+  display:                    block;
+  width:                      100%;
+}
+
+div#duck-mixer-alt div.duck-mixer--board--alt {
+  background-color:           rgba(81,81,81,0.67);
+  border:                     1px solid white;
+  border-radius:              0.9rem;
+  box-shadow:                 0.3rem 0.3rem 3.6rem -1.8rem black;
+  margin:                     auto;
+  max-width:                  75rem;
+  position:                   relative;
+}
+
+div#duck-mixer-alt div.credits {
+  color:                      white;
+  font-weight:                700;
+  padding:                    0.6rem 0.9rem;
+}
+
+div#duck-mixer-alt div.credits > p {
+  display:                    block;
+  margin:                     auto;
+  max-width:                  19.5rem;
+  overflow:                   hidden;
+  text-overflow:              ellipsis;
+  white-space:                nowrap;
+}
+
+div#duck-mixer-alt div.container-audio {
+  background-color:           #2a2a2a;
+  border-radius:              0.9rem;
+  margin:                     0.9rem;
+  padding:                    0.9rem;
+  position:                   relative;
+}
+
+iframe#duck-mixer--embed-frame {
+  border:                     0;
+  height:                     1092px;
+  margin:                     0;
+  padding:                    0;
+  width:                      100%;
+}
+
+@media screen and (pointer: coarse) {
+  iframe#duck-mixer--embed-frame {
+    border:                     0;
+    height:                     282px;
+    margin:                     0;
+    padding:                    0;
+    width:                      100%;
+  }
+}
+
+@media screen and (min-width: 331px) {
+  div#duck-mixer ul.choose--track li > label p {
+    max-width:                none;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  div#duck-mixer button.solo {
+      font-size: 0.9rem;
+  }
+
+  div#duck-mixer div.controls--track--master h3 {
+    font-size:                0.81rem;
+    margin:                   0;
+    margin-top:               4.2rem;
+    position:                 relative;
+    text-align:               center;
+  }
+
+  div#duck-mixer div.controls--master-playback {
+    margin:                   3rem auto
+  }
+
+  div#duck-mixer ul.choose--track li label {
+    box-shadow:               none;
+  }
+
+  div#duck-mixer ul.choose--track li label:active {
+    top: 0;
+  }
+
+  div#duck-mixer ul.choose--track li > label::before {
+    height:                   1.8rem;
+    top:                      6rem;
+    left:                     calc(50% - 2.1rem / 2 - 0.63rem / 2);
+    padding-top:              0.54rem;
+    width:                    2.1rem;
+  }
+
+  div#duck-mixer button, div#duck-mixer div.credits, div#duck-mixer ul.choose--track li > label::before, div#duck-mixer ul.choose--track li > label p {
+    font-size:                1.2rem;
+  }
+
+  div#duck-mixer div.controls--track--mobile-master {
+    display:                  none;
+  }
+
+  div#duck-mixer h3 {
+    font-size:                0.99rem;
+  }
+
+  div#duck-mixer hr {
+    margin:                   2.7rem 0.9rem 0;
+    clip-path:                url(#duck-mixer--bg--hr);
+  }
+
+  div#duck-mixer input[type=range] {
+    margin-bottom:            4.12rem;
+    margin-left:              -3.3rem;
+    margin-top:               4.1rem;
+    width:                    13.5rem;
+  }
+
+  div#duck-mixer ul.choose--track {
+    align-items:              flex-end;
+    display:                  flex;
+    margin-right:             0;
+    width:                    100%;
+    margin-top:               1.18rem;
+  }
+
+  div#duck-mixer ul.choose--track > h3:first-of-type {
+    left:                     calc(50% - 4.125rem / 2);
+    position:                 absolute;
+    top:                      -6.63rem;
+  }
+
+  div#duck-mixer ul.choose--track li {
+    display:                  flex;
+    height:                   27.9rem;
+    margin:                   0 0.36rem;
+    padding:                  0;
+    width:                    calc(100% / 8 - 0.6rem);
+  }
+
+  div#duck-mixer ul.choose--track li > label input[type=checkbox] {
+    display:                  block;
+    height:                   1.2rem;
+    margin:                   0 auto;
+    width:                    1.2rem;
+  }
+
+  div#duck-mixer ul.choose--track li > label {
+    padding-right:            0.63rem;
+    width:                    100%;
+  }
+
+
+  div#duck-mixer ul.choose--track li > label p {
+    margin-top:               0.36rem;
+    overflow:                 hidden;
+    text-align:               center;
+    text-overflow:            clip;
+    width:                    100%;
+    white-space:              nowrap;
+  }
+
+  div#duck-mixer ul.choose--track li:first-of-type {
+    margin-left: 0;
+  }
+
+  div#duck-mixer ul.choose--track li:last-of-type {
+    margin-right: 0;
+  }
+
+  div#duck-mixer div.container--controls--track {
+    display:                  block;
+    overflow:                 hidden;
+    position:                 relative;
+    margin:                   auto;
+    max-width:                4.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div#duck-mixer {
+    padding-bottom:           4.5rem;
+    padding-top:              4.5rem;
+  }
+}
+
+@media screen and (min-width: 1230px) {
+  div#duck-mixer {
+    padding-bottom:           5.4rem;
+    padding-top:              5.4rem;
+  }
+}
